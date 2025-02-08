@@ -1,0 +1,138 @@
+/* Navigation Bar (basic requirements) */
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+/* Basic Styling */
+.section {
+    padding: 2rem;
+}
+
+main h2,
+main h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+main h1 {
+    text-decoration: underline;
+}
+
+.projects-grid {
+    display: grid;
+    margin: 4vmin auto;
+    width: max-content;
+    grid-template-areas: "card figures"
+        "card button";
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Animated Separator */
+.animated-separator {
+    border: none;
+    height: 3px;
+    width: 80vw;
+    background: linear-gradient(to right, #00c6ff, #0072ff, #9c27b0, #ff9800);
+    background-size: 200% 100%;
+    animation: aUnderline 2s ease-in-out infinite;
+    margin: 2rem 0;
+}
+
+/* Image Slider */
+.image-slider {
+    width: 100%;
+    max-height: 50vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-img {
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+/* Navigation Buttons */
+.prev-btn,
+.next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Modal Preview */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: block;
+    max-width: 90%;
+    margin: 10% auto;
+    transition: all 0.3s;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+button {
+    margin: 0 5px;
+}
+
+.project-card {
+    grid-area: card;
+}
+
+.image-slider {
+    grid-area: figures;
+}
+
+.button-style {
+    grid-area: button;
+}
