@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables */
+:root {
+    --primary-bg-color: rgb(25, 25, 25);
+    --secondary-bg-color: rgb(15, 15, 15);
+    --text-color: rgb(250, 250, 250);
+    --accent-color: #007BFF;
+    --gradient-hover: linear-gradient(to right, #ff7eb3, #ff65a3, #ff47c2);
+    --button-bg: linear-gradient(to right, #0099ff, #0066cc, #004d99);
+    --button-hover-bg: linear-gradient(to right, #00bfae, #007f5f, #004d3d);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --def-padding: 5px;
+}
+
+p {
+    padding-top: var(--def-padding);
+    padding-bottom: var(--def-padding);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Heading Animations */
+main h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+main h1.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-optical-sizing: auto;
+    line-height: 1.5;   /* 50% more space between lines */
+}
+
+/* Navigation Bar */
+header {
+    background-color: var(--secondary-bg-color);
+    padding: 1rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin: auto;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: clamp(1rem, 2.8vw, 1.4rem);
+}
+
+/* Hover effect for navigation links */
+nav ul li a:hover {
+    background: var(--gradient-hover);
+    transition: color 0.3s;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    width: 120px;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-bg-color);
+    list-style: none;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Ensure dropdown appears above other content */
+}
+
+/* Show dropdown when hovering over the parent item */
+nav ul li:hover > ul {
+    display: block;
+}
+
+/* Styling for dropdown links */
+nav ul li ul li a {
+    padding: 0.5rem;
+    color: aliceblue;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li ul li a:hover {
+    background: var(--gradient-hover);
+    transition: color 0.3s;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Buttons */
+.button-style {
+    margin: 3vh auto;
+    width: max-content;
+    padding: 10px 20px;
+    background: var(--button-bg);
+    color: white;
+    border: 1px solid black;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.button-style:hover {
+    background: var(--button-hover-bg);
+    /* Grow the button on hover */
+    transform: scale(1.03);
+    /* Ensure both background color & scaling happen smoothly */
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+/* Create the underline using the ::after pseudo-element */
+.project-card::after, .a-underlined::after, .curly-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+}
+
+.curly-underline::after {
+    background: linear-gradient(to right, #6a1b9a, #ff4081, #6a1b9a);
+}
+
+.project-card::after, .a-underlined::after{
+    background: linear-gradient(to right, #00c6ff, #0072ff, #9c27b0, #ff9800);
+}
+
+.project-card::after, .a-underlined::after, .curly-underline::after {
+    background-size: 200% 100%;
+    background-position: 100% 100%;
+    animation: aUnderline 1s ease-in-out infinite;
+}
+
+/* Curly text underline animation */
+.curly-underline {
+    font-family: cursive;
+    background: linear-gradient(to right, #6a1b9a, #ff4081, #6a1b9a);
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+/* Animation for the underline */
+@keyframes aUnderline {
+    0% {
+        background-position: 100% 100%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.glass-bg,
+.project-card, footer {
+    /* So the backdrop filter affects only this container */
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2px);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 4px rgb(34, 0, 202);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.glass-bg {
+    margin: 4vh auto;
+    border-radius: 15px;
+    padding: 4vmin;
+    width: 80%;
+    height: max-content;
+}
+
+.project-card {
+    border-radius: 2px;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Cards Layout */
+.project-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Individual Project Card */
+.project-card {
+    margin: 0 auto;
+    position: relative;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-content {
+    padding: 1vh 2vw 2vh 2vw;
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.project-title, .project-description {
+    margin-bottom: 10px;
+}
+
+/* Links Styling */
+.project-link {
+    display: block;
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 5px;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: #0056b3;
+}
+
+footer {
+    padding: 1vmin;
+    text-align: center;
+}

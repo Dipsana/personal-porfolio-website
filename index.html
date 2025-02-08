@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipsana's Personal Portfolio</title>
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    <link rel="stylesheet" href="style(global).css">
+    <link rel="stylesheet" href="assets/index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a target="_blank" href="about.html">About</a>
+                    <ul>
+                        <li><a target="_blank" href="about.html#about-me">About me</a>
+                        <li><a target="_blank" href="about.html#education">Education</a>
+                        <li><a target="_blank" href="about.html#work-exp">Work Experience</a>
+                    </ul>
+                </li>
+                <li><a target="_blank" href="projects.html">Projects</a>
+                    <ul>
+                        <li><a target="_blank" href="projects.html#web-projects">Web projects</a>
+                        <li><a target="_blank" href="projects.html#c-projects">C projects</a>
+                    </ul>
+                </li>
+                <li><a target="_blank" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Background video -->
+    <video id="bg-video" autoplay loop muted>
+        <source src="assets/videos/stars-moving.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <main>
+        <!-- Profile and animated text section -->
+        <section id="profile" class="glass-bg a-underlined">
+            <figure>
+                <img src="assets/images/profile-pic.jpg" alt="Dipsana's profile picture">
+                <figcaption class="curly-underline">A glimpse of me</figcaption>
+            </figure>
+
+            <div class="text-container">
+                <h1 class="text" id="text1">Hey there! It's nice to meet you.</h1>
+                <h1 class="text" id="text2">My name is Dipsana Roy.</h1>
+                <p>I'm from India. I'm a student pursuing <b> B.Tech (Computer Science) </b> degree. l love coding,
+                    music
+                    and creating new projects. My goal is to become a game developer. I love technology related
+                    subjects.</p>
+                <a href="assets/documents/Dipsana Roy CV Resume.pdf" download class="button-style">See My Resume</a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div id="animated-skills"></div>
+        </section>
+
+        <!-- Recent projects section -->
+        <section id="recent_Projects">
+            <h2>My Recent Projects</h2>
+            <div class="project-cards">
+                <!-- Tic Tac Toe Game -->
+                <article class="project-card a-underlined">
+                    <figure>
+                        <img src="assets/images/Tic_Tac_Toe_1.png" alt="Tic-Tac-Toe Game" class="project-img">
+                    </figure>
+                    <div class="project-content">
+                        <h3 class="project-title">Tic-Tac-Toe Game</h3>
+                        <p class="project-description">A simple game built using vanilla JavaScript.</p>
+                        <a target="_blank" href="https://dipsana.github.io/Tic-Tac-Toe-Game/"
+                            class="project-link">Tic-Tac-Toe Game
+                            Preview</a>
+                        <a target="_blank" href="https://github.com/Dipsana/Tic-Tac-Toe-Game.git"
+                            class="project-link">Tic-Tac-Toe Game Source
+                            Code</a>
+                    </div>
+                </article>
+
+                <!-- To-Do List Web App -->
+                <article class="project-card a-underlined">
+                    <figure>
+                        <img src="assets/images/S To-Do List Web Application.png" alt="To-Do List Web App" class="project-img">
+                    </figure>
+                    <div class="project-content">
+                        <h3 class="project-title">To-Do List Web App</h3>
+                        <p class="project-description">Organize your tasks with this dynamic app.</p>
+                        <a target="_blank" href="https://dipsana.github.io/to-do-list-web-app/" class="project-link">To-Do
+                            List Web App
+                            Preview</a>
+                        <a target="_blank" href="https://github.com/Dipsana/to-do-list-web-app.git" class="project-link">To-Do
+                            List Web App
+                            Source Code</a>
+                    </div>
+                </article>
+
+                <!-- Netflix Clone -->
+                <article class="project-card a-underlined">
+                    <figure>
+                        <img src="assets/images/Screenshot Netflix India.png" alt="Netflix Clone" class="project-img">
+                    </figure>
+                    <div class="project-content">
+                        <h3 class="project-title">Netflix Clone</h3>
+                        <p class="project-description">A clone of Netflix website made by me.</p>
+                        <a target="_blank" href="https://dipsana.github.io/Netflix-clone/"
+                            class="project-link">Netflix-clone
+                            Preview</a>
+                        <a target="_blank" href="https://github.com/Dipsana/Netflix-clone"
+                            class="project-link">Netflix-clone Source
+                            Code</a>
+                    </div>
+                </article>
+
+                <!-- Date Comparison -->
+                <article class="project-card a-underlined">
+                    <figure>
+                        <img src="assets/images/S Date-Comparison - Replit.png" alt="Date-comparison"
+                            class="project-img">
+                    </figure>
+                    <div class="project-content">
+                        <h3 class="project-title">Date-comparison</h3>
+                        <p class="project-description">C program to compare differences between two dates.</p>
+                        <a target="_blank" href="https://replit.com/@dipsana/Date-Comparison?v=1"
+                            class="project-link">Date-comparison
+                            Preview</a>
+                        <a target="_blank" href="https://github.com/Dipsana/Date-Comparison.git"
+                            class="project-link">Date-comparison Source
+                            Code</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <p>This website is maintained by &copy; 2025 Dipsana. | All rights reserved.</p>
+    <p>Contact: dipsanaroy@proton.me | +91 6295402485</p>
+    </footer>
+
+    <script src="assets/index.js"></script>
+</body>
+
+</html>
