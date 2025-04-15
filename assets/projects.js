@@ -1,3 +1,4 @@
+console.log("projects.js running...");
 let currentIndex = 0;
 const images = document.querySelectorAll('.slider-img');
 const sliderImages = document.querySelector('.slider-images');
