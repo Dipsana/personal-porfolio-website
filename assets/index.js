@@ -1,3 +1,4 @@
+console.log("index.js running...");
 const texts = [
     "Web Developer",
     "C, C++ & Java",
