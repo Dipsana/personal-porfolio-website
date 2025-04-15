@@ -1,3 +1,4 @@
+console.log("contact.js running...");
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -31,7 +32,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
             alert(data.message);
         })
         .catch((error) => {
-            console.error("Error:", error);
+            console.error("%cError:", red, error);
             alert("Something went wrong. Please try again.");
         });
 });
