@@ -1,3 +1,4 @@
+console.log("about.js running...");
 let background = document.body;
 
 function updateBackgroundPosition(event) {
